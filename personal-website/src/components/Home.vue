@@ -65,8 +65,8 @@
       <div class="text-center">
         <h3>Recent Photo</h3>
         <img 
-          src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/453785427_8152310394826037_7553184774730877772_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeF0XC7fuN1drtpkTgmagYfyMpP1l7pZ96Myk_WXuln3oy6Cehmb1IYEaMwFIinOvTcdHheG2k8C4jKy_lFfRP1r&_nc_ohc=eRh6tx9UAt0Q7kNvgGE2O6k&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=AaKOH-G9eCTGHVZdC7jmOO6&oh=00_AYCPMwmsDpxmVnl5ZgAladr5tbQWIUUwN_iocxTy5HJzhQ&oe=674E6FD5" 
-          alt="Profile Picture" 
+          src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
+          alt="Valorant" 
           class="profile-image"
         />
       </div>
