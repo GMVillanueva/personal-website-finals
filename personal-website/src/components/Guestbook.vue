@@ -1,50 +1,64 @@
 <template>
-    <div class="guestbook-container">
-      <h1>Guestbook</h1>
-      <form @submit.prevent="submitComment" class="comment-form">
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input 
-            type="text" 
-            id="name" 
-            v-model="newComment.name" 
-            required
-            placeholder="Your name"
-          />
-        </div>
+    <div class="container">
+      <div class="card">
+        <h1 class="text-center mb-3">Guestbook</h1>
+        <p class="text-center mb-4">
+          Leave a message in my guestbook! I'd love to hear from you.
+        </p>
         
-        <div class="form-group">
-          <label for="message">Message</label>
-          <textarea 
-            id="message" 
-            v-model="newComment.message" 
-            required
-            rows="4"
-            placeholder="Your message"
-          ></textarea>
-        </div>
-        
-        <button type="submit" :disabled="isSubmitting">
-          {{ isSubmitting ? 'Submitting...' : 'Submit Comment' }}
-        </button>
-      </form>
-      
-      <div v-if="isLoading" class="loading">Loading comments...</div>
-      
-      <div v-else-if="error" class="error">{{ error }}</div>
-      
-      <div v-else-if="comments.length === 0" class="no-comments">
-        No comments yet. Be the first to leave a message!
-      </div>
-      
-      <div v-else class="comments-list">
-        <h2>Comments</h2>
-        <div v-for="comment in comments" :key="comment.id" class="comment">
-          <div class="comment-header">
-            <h3>{{ comment.name }}</h3>
-            <span class="comment-date">{{ formatDate(comment.created_at) }}</span>
+        <form @submit.prevent="submitComment" class="mb-4">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              v-model="newComment.name" 
+              required
+              placeholder="Your name"
+            />
           </div>
-          <p>{{ comment.message }}</p>
+          
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea 
+              id="message" 
+              v-model="newComment.message" 
+              required
+              rows="4"
+              placeholder="Your message"
+            ></textarea>
+          </div>
+          
+          <button 
+            type="submit" 
+            :disabled="isSubmitting"
+          >
+            {{ isSubmitting ? 'Submitting...' : 'Submit Comment' }}
+          </button>
+        </form>
+        
+        <div v-if="isLoading" class="text-center mb-4">
+          <div class="spinner"></div>
+          <p>Loading comments...</p>
+        </div>
+        
+        <div v-else-if="error" class="text-center mb-4" style="color: red;">
+          {{ error }}
+        </div>
+        
+        <div v-else-if="comments.length === 0" class="text-center mb-4">
+          No comments yet. Be the first to leave a message!
+        </div>
+        
+        <div v-else>
+          <h2 class="mb-3">Comments</h2>
+          <div v-for="comment in comments" :key="comment.id" class="comment">
+            <div class="comment-header">
+              <h3>{{ comment.name }}</h3>
+              <span class="comment-date">{{ formatDate(comment.created_at) }}</span>
+            </div>
+            <p>{{ comment.message }}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -106,9 +120,11 @@
           
           if (error) throw error
           
+          // Reset form
           this.newComment.name = ''
           this.newComment.message = ''
           
+          // Refresh comments
           await this.fetchComments()
         } catch (err) {
           console.error('Error submitting comment:', err)
@@ -128,64 +144,3 @@
     }
   }
   </script>
-  
-  <style scoped>
-  .guestbook-container {
-    max-width: 100%;
-  }
-  
-  h1, h2 {
-    margin-bottom: 1rem;
-  }
-  
-  .comment-form {
-    margin-bottom: 2rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1rem;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  
-  input, textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:disabled {
-    background-color: #999;
-  }
-  
-  .comment {
-    border: 1px solid #eaeaea;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 4px;
-  }
-  
-  .comment-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.5rem;
-  }
-  
-  .comment-date {
-    font-size: 0.8rem;
-    color: #666;
-  }
-  </style>
