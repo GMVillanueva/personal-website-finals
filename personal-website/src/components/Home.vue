@@ -67,29 +67,43 @@
         <div class="gallery-grid">
           <div class="gallery-item">
             <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
-              alt="Valorant" 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482461755_963297175534887_9148725664306783511_n.jpg" 
+              alt="Den lalabs" 
               class="gallery-image"
             />
           </div>
           <div class="gallery-item">
             <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
-              alt="Valorant" 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482364440_1615990952418499_1992289064492331814_n.jpg" 
+              alt="Lalabs den" 
               class="gallery-image"
             />
           </div>
           <div class="gallery-item">
             <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
-              alt="Valorant" 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481783438_531627353284518_1477088235843197324_n.jpg" 
+              alt="Shades" 
               class="gallery-image"
             />
           </div>
           <div class="gallery-item">
             <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
-              alt="Valorant" 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481719931_1288568819110925_4081401323568267308_n.jpg" 
+              alt="Setup" 
+              class="gallery-image"
+            />
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481796888_1196781338716167_2077672232120609431_n.jpg" 
+              alt="Setup 1" 
+              class="gallery-image"
+            />
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481965755_1191415489224216_1732928015112449294_n.jpg" 
+              alt="Setup 2" 
               class="gallery-image"
             />
           </div>
