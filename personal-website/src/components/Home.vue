@@ -1,74 +1,99 @@
 <template>
   <div class="container">
     <div class="card">
-      <h1 class="text-center mb-4">Personal Profile Web page</h1>
+      <h1 class="title">Personal Profile Web page</h1>
       
-      <div class="two-column">
-        <div class="column">
-          <div class="mb-4">
-            <h2>About Me</h2>
+      <div class="content-grid">
+        <div class="content-column">
+          <section class="section">
+            <h2 class="section-title">About Me</h2>
             <p>
               Welcome to my personal profile! I'm passionate about technology and development.
             </p>
-          </div>
+          </section>
           
-          <div class="mb-4">
-            <h2>Education / Achievements</h2>
-            <ul>
+          <section class="section">
+            <h2 class="section-title">Education / Achievements</h2>
+            <ul class="list">
               <li>Highschool Graduate</li>
               <li>Senior Highschool Graduate</li>
               <li>College Shiftee</li>
             </ul>
-          </div>
+          </section>
           
-          <div class="mb-4">
-            <h2>Course</h2>
-            <ul>
+          <section class="section">
+            <h2 class="section-title">Course</h2>
+            <ul class="list">
               <li>Former BA Business Administration and Management</li>
               <li>Current Computer Science</li>
             </ul>
-          </div>
+          </section>
         </div>
         
-        <div class="column">
-          <div class="mb-4">
-            <h2>IT Experience</h2>
-            <ul>
+        <div class="content-column">
+          <section class="section">
+            <h2 class="section-title">IT Experience</h2>
+            <ul class="list">
               <li>Computer building</li>
               <li>FiveM Developer</li>
               <li>Habbo Retros Developer</li>
             </ul>
-          </div>
+          </section>
           
-          <div class="mb-4">
-            <h2>Hobbies & Interests</h2>
-            <ul>
+          <section class="section">
+            <h2 class="section-title">Hobbies & Interests</h2>
+            <ul class="list">
               <li>Gaming</li>
               <li>Movies</li>
               <li>Buying and Selling</li>
             </ul>
-          </div>
+          </section>
           
-          <div class="mb-4">
-            <h2>Goals In Life / Dream</h2>
-            <ul>
+          <section class="section">
+            <h2 class="section-title">Goals In Life / Dream</h2>
+            <ul class="list">
               <li>To be a successful developer</li>
               <li>To be able to provide a comfortable life</li>
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </div>
     
     <div class="card">
-      <h2 class="text-center mb-3">Picture Gallery</h2>
-      <div class="text-center">
-        <h3>Recent Photo</h3>
-        <img 
-          src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
-          alt="Valorant" 
-          class="profile-image"
-        />
+      <h2 class="gallery-title">Picture Gallery</h2>
+      <div class="gallery">
+        <h3 class="gallery-subtitle">Recent Photo</h3>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
+              alt="Valorant" 
+              class="gallery-image"
+            />
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
+              alt="Valorant" 
+              class="gallery-image"
+            />
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
+              alt="Valorant" 
+              class="gallery-image"
+            />
+          </div>
+          <div class="gallery-item">
+            <img 
+              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/54d784be3db8503ec574ff45e912ea098cc10352-854x484.png" 
+              alt="Valorant" 
+              class="gallery-image"
+            />
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -79,3 +104,144 @@ export default {
   name: 'Home'
 }
 </script>
+
+<style scoped>
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+}
+
+.section-title {
+  color: #3498db;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.list li::before {
+  content: "•";
+  color: #3498db;
+  position: absolute;
+  left: 0;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gallery {
+  text-align: center;
+}
+
+.gallery-subtitle {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-item {
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+</style>
