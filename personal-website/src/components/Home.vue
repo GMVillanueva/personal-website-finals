@@ -65,48 +65,14 @@
       <div class="gallery">
         <h3 class="gallery-subtitle">Recent Photo</h3>
         <div class="gallery-grid">
-          <div class="gallery-item">
+          <a v-for="(image, index) in galleryImages" :key="index" :href="image.src" class="gallery-item" target="_blank" rel="noopener noreferrer">
             <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482461755_963297175534887_9148725664306783511_n.jpg" 
-              alt="Den lalabs" 
+              :src="image.src" 
+              :alt="image.alt" 
               class="gallery-image"
             />
-          </div>
-          <div class="gallery-item">
-            <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482364440_1615990952418499_1992289064492331814_n.jpg" 
-              alt="Lalabs den" 
-              class="gallery-image"
-            />
-          </div>
-          <div class="gallery-item">
-            <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481783438_531627353284518_1477088235843197324_n.jpg" 
-              alt="Shades" 
-              class="gallery-image"
-            />
-          </div>
-          <div class="gallery-item">
-            <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481719931_1288568819110925_4081401323568267308_n.jpg" 
-              alt="Setup" 
-              class="gallery-image"
-            />
-          </div>
-          <div class="gallery-item">
-            <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481796888_1196781338716167_2077672232120609431_n.jpg" 
-              alt="Setup 1" 
-              class="gallery-image"
-            />
-          </div>
-          <div class="gallery-item">
-            <img 
-              src="https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481965755_1191415489224216_1732928015112449294_n.jpg" 
-              alt="Setup 2" 
-              class="gallery-image"
-            />
-          </div>
+            <div class="image-title">{{ image.alt }}</div>
+          </a>
         </div>
       </div>
     </div>
@@ -115,7 +81,45 @@
 
 <script>
 export default {
-  name: 'Home'
+  name: 'Home',
+  data() {
+    return {
+      galleryImages: [
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482461755_963297175534887_9148725664306783511_n.jpg",
+          alt: "Den lalabs"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482364440_1615990952418499_1992289064492331814_n.jpg",
+          alt: "Lalabs den"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481783438_531627353284518_1477088235843197324_n.jpg",
+          alt: "Shades"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481719931_1288568819110925_4081401323568267308_n.jpg",
+          alt: "Setup"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481796888_1196781338716167_2077672232120609431_n.jpg",
+          alt: "Setup 1"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481965755_1191415489224216_1732928015112449294_n.jpg",
+          alt: "Setup 2"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/481755147_1193987055487573_8271923561071462267_n.jpg",
+          alt: "Setup 3"
+        },
+        {
+          src: "https://github.com/GMVillanueva/personal-website-finals/raw/main/personal-website/img/482426102_1098972618919573_7053905209921206370_n.jpg",
+          alt: "Setup 4"
+        }
+      ]
+    };
+  }
 }
 </script>
 
@@ -210,11 +214,14 @@ export default {
 }
 
 .gallery-item {
+  position: relative;
   aspect-ratio: 16/9;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  display: block;
+  text-decoration: none;
 }
 
 .gallery-item:hover {
@@ -226,6 +233,23 @@ export default {
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+}
+
+.image-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .image-title {
+  opacity: 1;
 }
 
 /* Responsive Design */
